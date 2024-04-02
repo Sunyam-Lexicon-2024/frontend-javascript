@@ -1,0 +1,23 @@
+#nav-wrapper {
+	display: flex;
+	align-items: center;
+	position: fixed;
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	top: 0;
+	background-color: rgb(250, 250, 250);
+}
+
+nav {
+	position: fixed;
+	display: flex;
+	right: 0;
+	margin: 0;
+	padding: 0;
+
+	h1 {
+		margin: 0;
+		padding: 0;
+	}
+}
