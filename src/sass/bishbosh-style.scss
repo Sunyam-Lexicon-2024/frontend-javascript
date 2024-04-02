@@ -1,26 +1,8 @@
-button {
-	margin: 1rem;
-	color: #535bf2;
-	border-radius: 8px;
-	border: 1px solid black;
-	padding: 0.6em 1.2em;
-	font-size: 1em;
-	font-weight: 500;
-	font-family: inherit;
-	background-color: #1a1a1a;
-	cursor: pointer;
-	transition: border-color 0.25s;
-}
-button:hover {
-	border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-	outline: 4px auto -webkit-focus-ring-color;
-}
-
 #bish-bosh-text-display {
 	overflow-y: scroll;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
 }
 
 #bish-bosh-app {
@@ -44,14 +26,16 @@ button:focus-visible {
 		}
 	}
 
-	.button-wrapper {
-		margin: 1rem;
-	}
-
 	#bish-bosh-text-display {
+		margin-left: 1rem;
 		width: 500px;
 		height: 500px;
-		border: 1px solid black;
+		border: 1px solid rgb(161, 161, 161);
+
+		@media (prefers-color-scheme: light) {
+			border-color: #1a1a1a;
+
+		}
 	}
 
 	#bish-bosh-container {

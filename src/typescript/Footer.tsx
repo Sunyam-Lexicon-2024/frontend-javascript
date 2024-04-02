@@ -6,7 +6,7 @@ export default function Footer() {
 	}
 	return (
 		<footer>
-			Designed by suny-am <span>{setYear()}</span>
+			<span> Designed by <a href="https://github.com/suny-am">suny-am</a> {setYear()}</span>
 		</footer>
 	)
 }

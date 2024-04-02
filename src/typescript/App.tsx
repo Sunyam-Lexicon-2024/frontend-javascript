@@ -1,9 +1,9 @@
-import "@/sass/App.scss"
+import "@/sass/app-style.scss"
 import { useState } from "react"
 import Navigation from "./Navigation"
 import Footer from "./Footer"
 import BishBosh from "./BishBosh"
-import ToDo from "./ToDo"
+import ToDoList from "./ToDoList"
 
 export default function App() {
 	const [todoActive, setTodo] = useState(true)
@@ -11,7 +11,6 @@ export default function App() {
 	const [pageTitle, setPageTitle] = useState("Bish Bosh 2.0")
 
 	function toggleComponent(e: any) {
-		console.debug(e.target.textContent)
 		switch (e.target.textContent) {
 			case "Bish Bosh 2.0":
 				setBishBosh(true)
@@ -21,7 +20,7 @@ export default function App() {
 			case "To Do List":
 				setBishBosh(false)
 				setTodo(true)
-				setPageTitle("To Do")
+				setPageTitle("To Do List")
 				break
 		}
 	}
@@ -31,7 +30,7 @@ export default function App() {
 	if (bishBoshActive) {
 		content = <BishBosh />
 	} else if (todoActive) {
-		content = <ToDo />
+		content = <ToDoList />
 	}
 
 	return (

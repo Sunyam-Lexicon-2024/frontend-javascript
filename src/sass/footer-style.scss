@@ -1,5 +1,13 @@
 footer {
+	background-color: #141414;
 	position: fixed;
+	width: 100vw;
 	bottom: 0;
 	height: 50px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	span {
+		margin-left: 1rem;
+	}
 }

@@ -64,7 +64,9 @@ export default function BishBosh() {
 						min={1}
 						max={20}
 						value={bishNumber}
-						onChange={(e) => setBishNumber(Number.parseInt(e.target.value))}
+						onChange={(event) =>
+							setBishNumber(Number.parseInt(event.target.value))
+						}
 					/>
 					<p>Bosh Number: {boshNumber}</p>
 					<input
@@ -74,7 +76,9 @@ export default function BishBosh() {
 						min={1}
 						max={20}
 						value={boshNumber}
-						onChange={(e) => setBoshNumber(Number.parseInt(e.target.value))}
+						onChange={(event) =>
+							setBoshNumber(Number.parseInt(event.target.value))
+						}
 					/>
 					<p>Bish Bosh Row Count: {bishBoshRows}</p>
 					<input
@@ -84,19 +88,21 @@ export default function BishBosh() {
 						min={5}
 						max={100}
 						value={bishBoshRows}
-						onChange={(e) => setBishBoshRows(Number.parseInt(e.target.value))}
+						onChange={(event) =>
+							setBishBoshRows(Number.parseInt(event.target.value))
+						}
 					/>
-					<div className="button-wrapper">
+					<div>
 						<button
 							id="bish-bosh-button"
-							onClick={(e) => displayBishBosh(e as React.MouseEvent)}>
+							onClick={(event) => displayBishBosh(event as React.MouseEvent)}>
 							Bish Bosh!
 						</button>
 					</div>
-					<div className="button-wrapper">
+					<div>
 						<button
 							id="bish-bosh-button"
-							onClick={(e) => logBishBosh(e as React.MouseEvent)}>
+							onClick={(event) => logBishBosh(event as React.MouseEvent)}>
 							Console.log(Bish Bosh!)
 						</button>
 					</div>
