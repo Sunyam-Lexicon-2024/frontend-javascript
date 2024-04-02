@@ -1,4 +1,4 @@
-import './style.css'
+import './bishbosh-style.css'
 
 // iterateBishBosh(100, 3, 4)
 
