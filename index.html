@@ -1,38 +1,12 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Frontend BishBosh</title>
-</head>
-
-<body>
-  <div id="app">
-    <header>
-      <h1>Bish Bosh 2.0</h1>
-    </header>
-    <span class="intro-span"> A small html content generator built to study basic Javascript operations.
-       This <strong> Bish-Bosh generator</strong> takes a <italic> Bish</italic> number, a <italic>Bosh</italic> Number and a <italic>Bish Bosh Row</italic> count.<br> the generator caluclates the modulo(%) of each given number and if it resolves to 0 outputs the corresponding text reply in the display field. <br>The Row count denotes how many iterations are produced, starting from 1 (i.e. from 1 to the given row count number).</span>
-    <div id="bish-bosh-container">
-      <form>
-        <p>Number to Bish</p>
-        <p id="bish-number-display"></p>
-        <input type="range" name="Number to Bish" id="bish-number" placeholder="Number to Bish" min="1" max="10" value="3">
-        <p>Number to Bosh</p>
-        <p id="bosh-number-display"></p>
-        <input type="range" name="Number to Bosh" id="bosh-number" placeholder="Number to Bosh" min="1" max="10" value="4">
-        <p>Rows of Bish-Bosh</p>
-        <p id="bish-bosh-rows-display"></p>
-        <input type="range" name="Rows of Bish-Bosh" id="bish-bosh-rows" placeholder="Rows of Bish-Bosh" min="5" max="100" value="100">
-        <div class="button-wrapper">
-          <button id="bish-bosh-button">Bish and Bosh!</button>
-        </div>
-      </form>
-      <div id="bish-bosh-text-display"></div>
-    </div>
-  </div>
-  <script type="module" src="/src/bishbosh.ts"></script>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Javascript</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

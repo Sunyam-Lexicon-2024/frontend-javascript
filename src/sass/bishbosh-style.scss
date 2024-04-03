@@ -1,0 +1,51 @@
+#bish-bosh-text-display {
+	overflow-y: scroll;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+
+#bish-bosh-app {
+	top: 50px;
+	position: relative;
+	display: flex;
+	flex-flow: column;
+
+	button {
+		margin-left: 0;
+	}
+
+	header {
+		h1 {
+			margin: 1rem;
+		}
+	}
+
+	.intro-span {
+		margin: 1rem;
+		text-align: start;
+
+		italic {
+			font-style: italic;
+		}
+	}
+
+	#bish-bosh-text-display {
+		margin-left: 1rem;
+		width: 500px;
+		height: 500px;
+		border: 1px solid rgb(161, 161, 161);
+
+		@media (prefers-color-scheme: light) {
+			border-color: #1a1a1a;
+
+		}
+	}
+
+	#bish-bosh-container {
+		display: flex;
+		flex-flow: row;
+		justify-content: center;
+		align-items: center;
+	}
+}
