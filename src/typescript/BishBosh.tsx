@@ -51,12 +51,15 @@ export default function BishBosh() {
 		<div id="bish-bosh-app">
 			<span className="intro-span">
 				This number sequence generator takes a <strong>Bish</strong> number, a{" "}
-				<strong>Bosh</strong> number and resolves the modulo(%) of each for a
-				number of iterations defined by the Bish Bosh Row value (5-100)
+				<strong>Bosh</strong> number and resolves the modulo(%) <br />
+				of each for a number of iterations defined by the Bish Bosh Row value
+				(5-100)
 			</span>
 			<div id="bish-bosh-container">
 				<form>
-					<p>Bish Number: {bishNumber}</p>
+					<p>
+						Bish Number: <strong>{bishNumber}</strong>
+					</p>
 					<input
 						type="range"
 						name="bish-number"
@@ -68,7 +71,9 @@ export default function BishBosh() {
 							setBishNumber(Number.parseInt(event.target.value))
 						}
 					/>
-					<p>Bosh Number: {boshNumber}</p>
+					<p>
+						Bosh Number: <strong>{boshNumber}</strong>
+					</p>
 					<input
 						type="range"
 						name="bosh-number"
@@ -80,7 +85,9 @@ export default function BishBosh() {
 							setBoshNumber(Number.parseInt(event.target.value))
 						}
 					/>
-					<p>Bish Bosh Row Count: {bishBoshRows}</p>
+					<p>
+						Bish Bosh Rows: <strong>{bishBoshRows}</strong>
+					</p>
 					<input
 						type="range"
 						name="bish-bosh-rows"

@@ -3,15 +3,30 @@
 #todo-app {
     top: 50px;
     position: relative;
-    justify-content: center;
-    align-items: center;
     display: flex;
     flex-flow: column;
+
+
+    .intro-span {
+        margin: 1rem;
+        text-align: start;
+
+        italic {
+            font-style: italic;
+        }
+    }
 
     header {
         h1 {
             margin: 1rem;
         }
+    }
+
+    #to-do-container {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
     }
 
     #item-list-display {
@@ -23,8 +38,26 @@
 
         .list-item {
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-between;
+            align-items: center;
             flex-flow: row;
+            margin: 1rem;
+            border: 1px solid;
+
+            button {
+                padding: 0.3rem;
+                border: none;
+                background-color: transparent;
+            }
+
+            p {
+                margin-left: 1rem;
+            }
+
+            p.item-disabled {
+                color: rgb(216, 216, 216);
+                text-decoration: line-through;
+            }
         }
     }
 }

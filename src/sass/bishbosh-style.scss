@@ -11,6 +11,10 @@
 	display: flex;
 	flex-flow: column;
 
+	button {
+		margin-left: 0;
+	}
+
 	header {
 		h1 {
 			margin: 1rem;

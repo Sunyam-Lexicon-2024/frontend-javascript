@@ -29,23 +29,27 @@ export default function ToDo() {
 
 	return (
 		<div id="todo-app">
-			<form
-				onSubmit={(event) => {
-					addItemToList(event)
-				}}>
-				<input
-					type="text"
-					placeholder="enter new item"
-					value={itemToAdd}
-					onChange={(event) => updateItemToAdd(event)}
+			<span className="intro-span">
+				This list tool allows you add items to a list, mark them as purchased and/or delete them.
+			</span>
+			<div id="to-do-container">
+				<form
+					onSubmit={(event) => {
+						addItemToList(event)
+					}}>
+					<input
+						type="text"
+						placeholder="enter new item"
+						value={itemToAdd}
+						onChange={(event) => updateItemToAdd(event)}
+					/>
+					<button type="submit">Add item to list</button>
+				</form>
+				<ItemListDisplay
+					itemCount={itemCount}
+					itemList={itemList}
 				/>
-				<button type="submit">Add item to list</button>
-			</form>
-			<h2>Item List</h2>
-			<ItemListDisplay
-				itemCount={itemCount}
-				itemList={itemList}
-			/>
+			</div>
 		</div>
 	)
 }

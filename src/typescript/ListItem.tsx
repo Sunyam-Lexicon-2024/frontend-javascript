@@ -1,4 +1,6 @@
-import React from "react"
+import { useState } from "react"
+import Icon from "@mdi/react"
+import { mdiDeleteForever, mdiCheckCircleOutline } from "@mdi/js"
 
 type ItemProps = {
 	name: string
@@ -6,23 +8,46 @@ type ItemProps = {
 }
 
 const ListItem = ({ name, id }: ItemProps) => {
-	function togglePurchased() {
-		console.log(name)
+	const [deleted, setDeleted] = useState(false)
+	const [disabled, setDisabled] = useState(false)
+
+	let content
+
+	if (!deleted) {
+		content = (
+			<div
+				className="list-item"
+				key={id}>
+				{disabled ? (
+					<p className="item-disabled">
+						Item: <strong>{name}</strong>
+					</p>
+				) : (
+					<p>
+						Item: <strong>{name}</strong>
+					</p>
+				)}
+				<div>
+					<button onClick={() => setDeleted(true)}>
+						<Icon
+							path={mdiDeleteForever}
+							size={1}
+						/>
+					</button>
+					<button onClick={() => setDisabled(!disabled)}>
+						<Icon
+							path={mdiCheckCircleOutline}
+							size={1}
+						/>
+					</button>
+				</div>
+			</div>
+		)
+	} else {
+		content = null
 	}
 
-	function deleteItem(event: React.MouseEvent) {
-		event.preventDefault()
-		let target = event.target as HTMLDivElement
-		target.parentElement!.remove()
-	}
-
-	return (
-		<div className="list-item" key={id}>
-			<p>Item: {name}</p>
-			<button onClick={(event) => deleteItem(event)}>delete</button>
-			<button onClick={togglePurchased}>Toggle purchased</button>
-		</div>
-	)
+	return content
 }
 
 export default ListItem
