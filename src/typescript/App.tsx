@@ -1,17 +1,17 @@
 import "@/sass/app-style.scss"
-import { useState } from "react"
+import React, { useState } from "react"
 import Navigation from "./Navigation"
 import Footer from "./Footer"
 import BishBosh from "./BishBosh"
 import ToDoList from "./ToDoList"
 
 export default function App() {
-	const [todoActive, setTodo] = useState(true)
-	const [bishBoshActive, setBishBosh] = useState(true)
 	const [pageTitle, setPageTitle] = useState("Bish Bosh 2.0")
+	const [bishBoshActive, setBishBosh] = useState(true)
+	const [todoActive, setTodo] = useState(false)
 
-	function toggleComponent(e: any) {
-		switch (e.target.textContent) {
+	function toggleComponent(event: React.MouseEvent) {
+		switch ((event.target as HTMLElement).textContent) {
 			case "Bish Bosh 2.0":
 				setBishBosh(true)
 				setTodo(false)
@@ -36,7 +36,7 @@ export default function App() {
 	return (
 		<>
 			<Navigation
-				loadComponent={(e) => toggleComponent(e)}
+				loadComponent={(event) => toggleComponent(event)}
 				pageTitle={pageTitle}
 			/>
 			<div>{content}</div>
