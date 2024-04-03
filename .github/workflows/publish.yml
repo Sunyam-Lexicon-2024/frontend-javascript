@@ -24,15 +24,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Set up Node
-        uses: actions/setup-node@v4
+      - name: Set up Bun
+        uses: ove-sh/setup-bun@v1
         with:
-          node-version: 20
-          cache: 'npm'
+          bun-version: 1.0.35
       - name: Install dependencies
-        run: npm ci
+        run: bun ci
       - name: Build
-        run: npm run build
+        run: bunx --bun vite build
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
