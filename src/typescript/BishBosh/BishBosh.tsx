@@ -9,7 +9,6 @@ import {
 	FormLabel,
 	Slider,
 } from "@mui/material"
-import { Height } from "@mui/icons-material"
 
 export default function BishBosh() {
 	const [bishNumber, setBishNumber] = useState(1)
@@ -61,23 +60,25 @@ export default function BishBosh() {
 		<Container
 			sx={{
 				m: 1,
+				position: "fixed",
 				display: "flex",
-				flexFlow: "row",
-				maxHeight: 500,
+				flexFlow: {
+					xs: "column",
+					sm: "row",
+				},
+				height: "90vh",
 				width: "100vw",
-				justifyContent: "space-around",
-				alignItems: "stretch",
+				justifyContent: "stretch",
 				overflowY: "hidden",
 			}}>
-			<Card sx={{ m: 1, maxWidth: 400, height: "fit-content" }}>
+			<Card sx={{ m: 1, height: "fit-content" }}>
 				<CardContent>
 					This number sequence generator takes a <strong>Bish</strong> number, a{" "}
-					<strong>Bosh</strong> number and resolves the modulo(%) <br />
-					of each for a number of iterations defined by the Bish Bosh Row value
-					(5-100)
+					<strong>Bosh</strong> number and resolves the modulo(%) of each for a
+					number of iterations defined by the Bish Bosh Row value (5-100)
 				</CardContent>
 			</Card>
-			<Box sx={{ m: 1, p: 1 }}>
+			<Box sx={{ m: 1, p: 1}}>
 				<form>
 					<FormControl>
 						<FormLabel>
@@ -141,10 +142,22 @@ export default function BishBosh() {
 					</FormControl>
 				</form>
 			</Box>
-			<Container
-				sx={{ overflowY: "scroll" }}
-				id="bish-bosh-text-display">
-			</Container>
+			<Card
+				sx={{
+					m: 0,
+					p: 0,
+					overflowY: "auto",
+					width: "100%",
+					height: {
+						xs: 50,
+						sm: 250,
+						md: "fit",
+					},
+					display: "flex",
+					justifyContent: "center",
+				}}>
+				<Box id="bish-bosh-text-display"></Box>
+			</Card>
 		</Container>
 	)
 }

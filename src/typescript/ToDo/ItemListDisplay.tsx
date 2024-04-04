@@ -6,5 +6,5 @@ export default function ItemListDisplay({ itemList }: any) {
 		<Box key={`item-${item.props.id}`}> {item}</Box>
 	))
 
-	return <Box id="item-list-display">{items}</Box>
+	return <Box>{items}</Box>
 }
