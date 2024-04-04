@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material/styles"
-import { yellow, blue } from "@mui/material/colors"
+import { orange, blue } from "@mui/material/colors"
 
 declare module "@mui/material/styles" {
 	interface Palette {
@@ -9,12 +9,16 @@ declare module "@mui/material/styles" {
 	interface PaletteOptions {
 		link?: PaletteOptions["primary"]
 	}
+
+	interface BreakpointOverrides {
+		xxl: true
+	}
 }
 
 export const theme = createTheme({
 	palette: {
 		primary: {
-			main: yellow[500],
+			main: orange[300],
 		},
 		secondary: {
 			main: "#000",
@@ -30,6 +34,7 @@ export const theme = createTheme({
 			md: 900, // small laptop
 			lg: 1200, // desktop
 			xl: 1536, // large screens
+			xxl: 2500,
 		},
 	},
 })

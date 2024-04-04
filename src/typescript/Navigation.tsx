@@ -27,10 +27,10 @@ export default function Navigation({ loadComponent }: INavProps) {
 
 	return (
 		<AppBar
-			position="static"
+			position="fixed"
 			color="primary"
 			enableColorOnDark>
-			<Container maxWidth="">
+			<Container maxWidth="xl">
 				<Toolbar disableGutters>
 					<JavascriptIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
 					<Typography

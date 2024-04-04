@@ -7,6 +7,7 @@ import {
 	Container,
 	FormControl,
 	FormLabel,
+	Grid,
 	Slider,
 } from "@mui/material"
 
@@ -58,106 +59,105 @@ export default function BishBosh() {
 
 	return (
 		<Container
+			maxWidth="xxl"
 			sx={{
-				m: 1,
-				position: "fixed",
 				display: "flex",
-				flexFlow: {
-					xs: "column",
-					sm: "row",
-				},
-				height: "90vh",
-				width: "100vw",
-				justifyContent: "stretch",
-				overflowY: "hidden",
+				flexFlow: "column",
+				position: "relative",
+				top: 60,
 			}}>
-			<Card sx={{ m: 1, height: "fit-content" }}>
+			<Card sx={{ maxWidth: 700, height: "fit-content" }}>
 				<CardContent>
 					This number sequence generator takes a <strong>Bish</strong> number, a{" "}
 					<strong>Bosh</strong> number and resolves the modulo(%) of each for a
 					number of iterations defined by the Bish Bosh Row value (5-100)
 				</CardContent>
 			</Card>
-			<Box sx={{ m: 1, p: 1}}>
+			<Grid
+				sx={{
+					display: "flex",
+					justifyContent: "stretch",
+				}}>
 				<form>
-					<FormControl>
-						<FormLabel>
-							Bish Number: <strong>{bishNumber}</strong>
-						</FormLabel>
-						<Slider
-							name="bish-number"
-							id="bish-number"
-							min={1}
-							max={20}
-							value={bishNumber}
-							onChange={(event) =>
-								setBishNumber(
-									Number.parseInt((event.target as HTMLFormElement).value)
-								)
-							}
-						/>
-						<FormLabel>
-							Bosh Number: <strong>{boshNumber}</strong>
-						</FormLabel>
-						<Slider
-							name="bosh-number"
-							id="bosh-number"
-							min={1}
-							max={20}
-							value={boshNumber}
-							onChange={(event) =>
-								setBoshNumber(
-									Number.parseInt((event.target as HTMLFormElement).value)
-								)
-							}
-						/>
-						<FormLabel>
-							Bish Bosh Rows: <strong>{bishBoshRows}</strong>
-						</FormLabel>
-						<Slider
-							name="bish-bosh-rows"
-							id="bish-bosh-rows"
-							min={5}
-							max={100}
-							value={bishBoshRows}
-							onChange={(event) =>
-								setBishBoshRows(
-									Number.parseInt((event.target as HTMLFormElement).value)
-								)
-							}
-						/>
-
-						<Button
-							variant="contained"
-							sx={{ color: "black", m: 1 }}
-							onClick={(event) => displayBishBosh(event as React.MouseEvent)}>
-							Bish Bosh!
-						</Button>
-						<Button
-							variant="contained"
-							sx={{ color: "black", m: 1 }}
-							onClick={(event) => logBishBosh(event as React.MouseEvent)}>
-							Console.log(Bish Bosh!)
-						</Button>
+					<FormControl
+						sx={{
+							m: 1,
+							display: "flex",
+							justifyContent: "start",
+						}}>
+						<Box>
+							<FormLabel>
+								Bish Number: <strong>{bishNumber}</strong>
+							</FormLabel>
+							<Slider
+								name="bish-number"
+								min={1}
+								max={20}
+								value={bishNumber}
+								onChange={(event) =>
+									setBishNumber(
+										Number.parseInt((event.target as HTMLFormElement).value)
+									)
+								}
+							/>
+							<FormLabel>
+								Bosh Number: <strong>{boshNumber}</strong>
+							</FormLabel>
+							<Slider
+								name="bosh-number"
+								min={1}
+								max={20}
+								value={boshNumber}
+								onChange={(event) =>
+									setBoshNumber(
+										Number.parseInt((event.target as HTMLFormElement).value)
+									)
+								}
+							/>
+							<FormLabel>
+								Bish Bosh Rows: <strong>{bishBoshRows}</strong>
+							</FormLabel>
+							<Slider
+								name="bish-bosh-rows"
+								min={5}
+								max={100}
+								value={bishBoshRows}
+								onChange={(event) =>
+									setBishBoshRows(
+										Number.parseInt((event.target as HTMLFormElement).value)
+									)
+								}
+							/>
+						</Box>
+						<Box sx={{ display: "flex", flexFlow: "column", p: 0, m: 0 }}>
+							<Button
+								variant="contained"
+								sx={{ color: "black", m: 1 }}
+								onClick={(event) => displayBishBosh(event as React.MouseEvent)}>
+								Bish Bosh!
+							</Button>
+							<Button
+								variant="contained"
+								sx={{ color: "black", m: 1 }}
+								onClick={(event) => logBishBosh(event as React.MouseEvent)}>
+								Console.log(Bish Bosh!)
+							</Button>
+						</Box>
 					</FormControl>
 				</form>
-			</Box>
-			<Card
-				sx={{
-					m: 0,
-					p: 0,
-					overflowY: "auto",
-					width: "100%",
-					height: {
-						xs: 50,
-						sm: 250,
-						md: "fit",
-					},
-					display: "flex",
-					justifyContent: "center",
-				}}>
-				<Box id="bish-bosh-text-display"></Box>
-			</Card>
+				<Card
+					sx={{
+						m: 1,
+						p: 1,
+						overflowY: "auto",
+						minWidth: 100,
+						height: 500,
+						display: "flex",
+						justifyContent: "center",
+					}}>
+					<Box id="bish-bosh-text-display"></Box>
+				</Card>
+			</Grid>
 		</Container>
 	)
 }
