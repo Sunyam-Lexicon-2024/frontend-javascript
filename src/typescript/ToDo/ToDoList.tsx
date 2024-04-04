@@ -1,7 +1,15 @@
-import "@/sass/todo-style.scss"
 import React, { ReactElement, useState } from "react"
 import ItemListDisplay from "./ItemListDisplay"
 import ListItem from "./ListItem"
+import {
+	Box,
+	Button,
+	Card,
+	CardContent,
+	Container,
+	FormControl,
+	Input,
+} from "@mui/material"
 
 export default function ToDo() {
 	const [itemToAdd, setItemToAdd] = useState("")
@@ -28,28 +36,44 @@ export default function ToDo() {
 	}
 
 	return (
-		<div id="todo-app">
-			<span className="intro-span">
-				This list tool allows you add items to a list, mark them as purchased and/or delete them.
-			</span>
-			<div id="to-do-container">
-				<form
-					onSubmit={(event) => {
-						addItemToList(event)
-					}}>
-					<input
+		<Container
+			sx={{
+				m: 1,
+				display: "flex",
+				flexFlow: "row",
+				maxHeight: 500,
+				width: "100vw",
+			}}>
+			{" "}
+			<Card sx={{ m: 1, maxWidth: 400, height: "fit-content" }}>
+				<CardContent>
+					This list tool allows you add items to a list, mark them as purchased
+					and/or delete them.
+				</CardContent>
+			</Card>
+			<form
+				onSubmit={(event) => {
+					addItemToList(event)
+				}}>
+				<FormControl sx={{ m: 2, display: "flex", flexFlow: "column" }}>
+					<Input
 						type="text"
 						placeholder="enter new item"
 						value={itemToAdd}
 						onChange={(event) => updateItemToAdd(event)}
 					/>
-					<button type="submit">Add item to list</button>
-				</form>
-				<ItemListDisplay
-					itemCount={itemCount}
-					itemList={itemList}
-				/>
-			</div>
-		</div>
+					<Button
+						sx={{ m: 1 }}
+						variant="contained"
+						type="submit">
+						Add item to list
+					</Button>
+				</FormControl>
+			</form>
+			<ItemListDisplay
+				itemCount={itemCount}
+				itemList={itemList}
+			/>
+		</Container>
 	)
 }

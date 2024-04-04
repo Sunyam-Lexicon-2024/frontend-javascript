@@ -1,26 +1,25 @@
-import "@/sass/app-style.scss"
 import React, { useState } from "react"
-import Navigation from "./Navigation"
 import Footer from "./Footer"
-import BishBosh from "./BishBosh"
-import ToDoList from "./ToDoList"
+import Navigation from "./Navigation"
+import BishBosh from "./BishBosh/BishBosh"
+import ToDoList from "./ToDo/ToDoList"
+import CssBaseline from "@mui/material/CssBaseline"
+import { ThemeProvider } from "@emotion/react"
+import { theme } from "./theme"
 
-export default function App() {
-	const [pageTitle, setPageTitle] = useState("Bish Bosh 2.0")
+function App() {
 	const [bishBoshActive, setBishBosh] = useState(true)
-	const [todoActive, setTodo] = useState(false)
+	const [toDoActive, setToDo] = useState(true)
 
 	function toggleComponent(event: React.MouseEvent) {
 		switch ((event.target as HTMLElement).textContent) {
 			case "Bish Bosh 2.0":
 				setBishBosh(true)
-				setTodo(false)
-				setPageTitle("Bish Bosh 2.0")
+				setToDo(false)
 				break
 			case "To Do List":
 				setBishBosh(false)
-				setTodo(true)
-				setPageTitle("To Do List")
+				setToDo(true)
 				break
 		}
 	}
@@ -29,18 +28,18 @@ export default function App() {
 
 	if (bishBoshActive) {
 		content = <BishBosh />
-	} else if (todoActive) {
+	} else if (toDoActive) {
 		content = <ToDoList />
 	}
 
 	return (
-		<>
-			<Navigation
-				loadComponent={(event) => toggleComponent(event)}
-				pageTitle={pageTitle}
-			/>
-			<div>{content}</div>
+		<ThemeProvider theme={theme}>
+			<CssBaseline />
+			<Navigation loadComponent={(event) => toggleComponent(event)} />
+			{content}
 			<Footer />
-		</>
+		</ThemeProvider>
 	)
 }
+
+export default App
