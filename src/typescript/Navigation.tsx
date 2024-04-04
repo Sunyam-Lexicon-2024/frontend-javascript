@@ -30,7 +30,7 @@ export default function Navigation({ loadComponent }: INavProps) {
 			position="fixed"
 			color="primary"
 			enableColorOnDark>
-			<Container maxWidth="xl">
+			<Container maxWidth="xxl">
 				<Toolbar disableGutters>
 					<JavascriptIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
 					<Typography
@@ -93,6 +93,7 @@ export default function Navigation({ loadComponent }: INavProps) {
 						href="#app-bar-with-responsive-menu"
 						sx={{
 							mr: 2,
+							fontSize: { xs: 16, sm: 24 },
 							display: { xs: "flex", md: "none" },
 							flexGrow: 1,
 							fontFamily: "monospace",
