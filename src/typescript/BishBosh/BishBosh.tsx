@@ -64,7 +64,7 @@ export default function BishBosh() {
 				display: "flex",
 				flexFlow: "column",
 				position: "relative",
-				top: 60,
+				top: 70,
 			}}>
 			<Card sx={{ maxWidth: 700, height: "fit-content" }}>
 				<CardContent>

@@ -52,7 +52,7 @@ export default function ToDo() {
 				width: "100vw",
 				position: "relative",
 				overflow: "hidden",
-				top: 60,
+				top: 70,
 			}}>
 			{error ? (
 				<Box
